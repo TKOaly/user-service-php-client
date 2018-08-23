@@ -4,7 +4,9 @@ A composer package used to access data from TKO-äly user service.
 
 ## Installation
 
-Todo
+1. Clone the repo
+2. Run `composer install` in the cloned repo
+3. Require the script in your code and follow the example below
 
 ## Example
 

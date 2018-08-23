@@ -1,0 +1,16 @@
+{
+    "name": "tkoaly/user-service-php-client",
+    "description": "A PHP client to fetch user data from TKO-äly User service.",
+    "type": "library",
+    "version": "1.0.0",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git://github.com/TKOaly/user-service-php-client.git"
+        }
+    ]
+}

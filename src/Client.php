@@ -34,6 +34,6 @@ class UserServiceClient
 
         $response = $client->get($user_endpoint, $opts);
         $body = $response->getBody();
-        return json_decode($body);
+        return json_decode($body, true);
     }
 }

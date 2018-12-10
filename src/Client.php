@@ -30,6 +30,7 @@ class UserServiceClient
         $client = new Client([
             'base_uri' => ($options != null && isset($options["baseUrl"])) ? trim($options["baseUrl"]) : $user_service_url,
             'timeout'  => ($options != null && isset($options["timeout"])) ? $options["timeout"] : 5.0,
+            'http_errors' => ($options != null && isset($options["httpErrors"])) ? $options["httpErrors"] : false,
         ]);
 
         $response = $client->get($user_endpoint, $opts);

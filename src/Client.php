@@ -19,19 +19,14 @@ class UserServiceClient
      * @param null $options Request options. baseUrl and timeout are currently supported request options.
      * @return mixed HTTP response as a JSON object
      */
-    public static function getMyData($token, $service, $options = null)
+    public static function getMyData($token, $service, $options = ['http_errors' => false, 'timeout' => 5.0, 'base_uri' => "https://users.tko-aly.fi"])
     {
-        $user_service_url = "https://users.tko-aly.fi";
         $user_endpoint = "/api/users/me";
 
         $opts = [];
         $opts["headers"] = ['Authorization' => 'Bearer ' . trim($token), 'Service' => $service];
 
-        $client = new Client([
-            'base_uri' => ($options != null && isset($options["baseUrl"])) ? trim($options["baseUrl"]) : $user_service_url,
-            'timeout'  => ($options != null && isset($options["timeout"])) ? $options["timeout"] : 5.0,
-            'http_errors' => ($options != null && isset($options["httpErrors"])) ? $options["httpErrors"] : false,
-        ]);
+        $client = new Client($options);
 
         $response = $client->get($user_endpoint, $opts);
         $body = $response->getBody();
